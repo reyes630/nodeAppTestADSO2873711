@@ -1,5 +1,5 @@
 // Enlazamos nuestro servicio
-const Articleservice = require('../services/Articleservice');
+const Articleservice = require('../services/articleService');
 
 const getAllArticles = async (req, res)=>{
     const allArticles = await Articleservice.getAllArticles();
