@@ -42,7 +42,7 @@ const getOneUser = async (req, resp) => {
 
 const createUser = async (req, res)=>{
     const {body}= req;
-    const createdUser = await user_Service.createUser(body.name, body.email, body.password);
+    const createdUser = await user__service.createUser(body.name, body.email, body.password);
     if(createdUser)
         res.status(201).send({ status:"OK",data: createUser });
     else
@@ -52,7 +52,7 @@ const createUser = async (req, res)=>{
 const updateUser = async (req, res)=>{
     let id = req.params.id;
     let {name,email,password}= req.body;
-    const updatedUser = await user_Service.updateUser(id,name,email,password);
+    const updatedUser = await user__service.updateUser(id,name,email,password);
     if(updatedUser)
         res.status(200).send({ status:"OK",data: updatedUser });
     else
@@ -61,7 +61,7 @@ const updateUser = async (req, res)=>{
 
 const deleteUser = async (req, res)=>{
     let id = req.params.userId;
-    const deletedUser = await user_Service.deleteUser(id);
+    const deletedUser = await user__service.deleteUser(id);
     if(deletedUser)
     res.status(200).send({ status:"OK", data: deletedUser });
     else

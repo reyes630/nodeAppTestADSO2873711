@@ -12,6 +12,8 @@ app.use(bodyParser.json());//permite recicbir datos en formato json
 //routes
 //Rutas de Usuarios para la V1 de la API 
 app.use('/api/v1/users', require('./api/v1/user.routes'));//se llama la ruta de la api
+app.use('/api/v1/articles', require('./api/v1/articles.routes'));
+app.use('/api/v1/categories', require('./api/v1/categories.routes'));
 
 //rutas de la API
 // app.get('/', (req, res) => {
